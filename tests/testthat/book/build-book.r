@@ -1,8 +1,5 @@
-library(bookdown)
+library(bookdown2)
 library(rmarkdown)
-library(captioner)
-table_nums <- captioner(prefix = "Table")
-fig_nums <- captioner(prefix = "Figure")
 
 # Render chapters into tex  ----------------------------------------------------
 needs_update <- function(src, dest) {
@@ -17,7 +14,7 @@ render_chapter <- function(src, bib, csl) {
 
   message("Rendering ", src)
   command <- bquote(rmarkdown::render(.(src),
-                                      bookdown::tex_chapter(bib = .(bib), csl = .(csl)),
+                                      bookdown2::tex_chapter(bib = .(bib), csl = .(csl)),
                                       output_dir = "book/tex",
                                       quiet = TRUE, env = globalenv()))
   writeLines(deparse(command), "run.r")

@@ -1,8 +1,9 @@
-Package: bookdown
-Title: What the package does (short line)
+Package: bookdown2
+Title: Formats books from Rmarkdown documents
 Version: 0.1
-Authors@R: 'Hadley Wickham <h.wickham@gmail.com> [aut,cre]'
-Description: What the package does (paragraph)
+Authors@R: as.person(c('Hadley Wickham <h.wickham@gmail.com> [aut,cre]',
+                       'Ben Marwick <benmarwick@gmail.com> [ctb]'))
+Description: Helps you format a book that can be generated into pleasantly formatted web pages or a PDF. This differs from the original bookdown package by adding basic support for citations, captions and cross-references
 Depends:
     R (>= 3.1.0)
 Imports:

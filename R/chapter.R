@@ -1,6 +1,6 @@
 #' @export
 html_chapter <- function(toc = NULL) {
-  library(bookdown)
+  library(bookdown2)
 
   base <- rmarkdown::html_document(
     self_contained = FALSE,
@@ -25,7 +25,7 @@ html_chapter <- function(toc = NULL) {
 
 #' @export
 pdf_chapter <- function(toc = FALSE, book = FALSE) {
-  library(bookdown)
+  library(bookdown2)
 
   base <- rmarkdown::pdf_document(
     template = system.file("book-template.tex", package = "bookdown"),
@@ -39,7 +39,7 @@ pdf_chapter <- function(toc = FALSE, book = FALSE) {
 
 #' @export
 tex_chapter <- function(toc = FALSE, book = FALSE, bib, csl) {
-  library(bookdown)
+  library(bookdown2)
   options(digits = 3)
   set.seed(1014)
 
