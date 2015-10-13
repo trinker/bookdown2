@@ -1,0 +1,30 @@
+---
+title: "Test Chapter 2"
+output: bookdown::html_chapter
+---
+
+```{r, caption_numering, echo = FALSE}
+chapter_number <- 2
+ref <- list(
+  fig = pryr::partial(captioner::captioner, prefix = paste0("Figure ", chapter_number, "."), auto_space = FALSE)(),
+  tbl = pryr::partial(captioner::captioner, prefix = paste0("Table ", chapter_number, "."), auto_space = FALSE)()
+)
+```
+
+# Heading of Test Chapter 2 {#testchaptertwo}
+
+This is another chapter of the book. 
+
+```{r old_faithful}
+plot(faithful, col = "blue", main = "Eruptions of Old Faithful")
+```
+
+`r ref$fig(name = "old_faithful", caption = "Eruptions of Old Faithful", level = 1)`
+
+This is a _very_ basic plot (`r ref$fig("old_faithful", display = "cite", level = 1)`). But it's easy to make very elegant and useful visuaisations with R, thanks to the numerous accessible books on the topic [@wickham2009ggplot2; @murrell2011r; @chang2012r]
+
+
+## References 
+
+
+

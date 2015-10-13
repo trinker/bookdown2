@@ -9,6 +9,8 @@ Imports:
     rmarkdown,
     RJSONIO,
     yaml,
-    stringr
+    stringr,
+    captioner
 License: GPL-3
 LazyData: true
+Suggests: testthat

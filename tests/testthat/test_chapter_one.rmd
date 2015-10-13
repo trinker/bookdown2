@@ -1,0 +1,31 @@
+---
+title: "Test Chapter 1"
+output: bookdown::html_document
+---
+
+
+```{r, caption_numering, echo = FALSE}
+# from https://github.com/adletaw/captioner/issues/11
+chapter_number <- 1
+ref <- list(
+  fig = pryr::partial(captioner::captioner, prefix = paste0("Figure ", chapter_number, "."), auto_space = FALSE)(),
+  tbl = pryr::partial(captioner::captioner, prefix = paste0("Table ", chapter_number, "."), auto_space = FALSE)()
+)
+```
+
+# Heading of Test Chapter 1 {#testchapterone}
+
+This is a chapter of the book for testing. It has code to be executed, and citations to be processed. The code produces a plot (`r ref$fig("random_data", display = "cite")`).
+
+We are testing to see if a bib file and a csl can be used with the bookdown package to produce chapters that have a reference list at the end.
+
+```{r simple_plot}
+plot(rnorm(1000))
+```
+
+`r ref$fig(name = "random_data", caption = "Plot of 100 values randomly sampled from a normal distribution.")`
+
+Some of the best recent books on R include Hadley Wickham's 'Advanced R' [-@wickham2014advanced]. He also has a very useful book on R packages [@wickham2015packages].
+
+## References 
+
