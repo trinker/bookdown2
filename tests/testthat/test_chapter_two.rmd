@@ -1,6 +1,6 @@
 ---
 title: "Test Chapter 2"
-output: bookdown::html_chapter
+output: bookdown2::html_chapter
 ---
 
 ```{r, caption_numering, echo = FALSE}

@@ -11,7 +11,8 @@ Imports:
     RJSONIO,
     yaml,
     stringr,
-    captioner
+    captioner,
+    pryr
 License: GPL-3
 LazyData: true
 Suggests: testthat

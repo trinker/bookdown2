@@ -1,6 +1,6 @@
 ---
 title: "Test Chapter 1"
-output: bookdown::html_document
+output: bookdown2::html_chapter
 ---
 
 

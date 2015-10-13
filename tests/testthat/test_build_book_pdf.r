@@ -9,12 +9,12 @@ test_that("can we can build the PDF?", {
 
 test_that("do we have plots for the PDF?", {
 
-  expect_true(file.exists("book/tex/figures/old_faithful-1.pdf"))
+  expect_true(grep("old_faithful", dir("book/tex/figures/")) == 1)
 })
 
 test_that("do we have well-formatted citations in the intermediate tex files?", {
 
-  expect_true(readLines("book/tex/test_chapter_one.tex")[27] == "Wickham, H. (2014). \\emph{Advanced R}. CRC Press.")
+  expect_true(grep("\\{Advanced R\\}. CRC Press.", readLines("book/tex/test_chapter_one.tex")) != 0)
 })
 
 test_that("do we have captions and cross-references in the intermediate tex files?", {
@@ -25,7 +25,7 @@ test_that("do we have captions and cross-references in the intermediate tex file
 
 
 # clean up
-unlink(c("figures", "book/tex", "book/test_book.pdf"), recursive = TRUE)
+unlink(c("figures", "book/tex"), recursive = TRUE)
 
 
 

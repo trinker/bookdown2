@@ -1,12 +1,16 @@
 #' @export
-html_chapter <- function(toc = NULL) {
+html_chapter <- function(toc = NULL, bib="references.bib", csl="apa.csl") {
   library(bookdown2)
 
   base <- rmarkdown::html_document(
     self_contained = FALSE,
     lib_dir = "www",
     template =  system.file("chapter-html.html", package = "bookdown"),
-    mathjax =  "default"
+    mathjax =  "default",
+    pandoc_args = c("--chapters",
+                    "--bibliography", bib,
+                    "--csl", csl,
+                    "")
   )
   # Remove --section-divs option
   base$pandoc$args <- setdiff(base$pandoc$args, "--section-divs")
