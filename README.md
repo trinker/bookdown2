@@ -6,7 +6,7 @@ Like bookdown, bookdown2 package is useful for writing Rmarkdown files and conve
 
 To see a small example of how it works, browse to the `tests/testthat` directory and inspect the files. Runnings the tests generates a small PDF book. You can also run `jekyll build` in the `tests/testthat` directory to get the website of the book (which is generated in the `_site` directory).
 
-Here are the dependencies external to R:
+I've developed and tested this package on Ubuntu 15.04, I'm not sure how it works on other operating systems. Here are the dependencies external to R:
 
 - [Pandoc](http://johnmacfarlane.net/pandoc/) & pandoc-citeproc
 - LaTeX (specifically Xelatex)
