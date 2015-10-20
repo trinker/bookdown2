@@ -8,13 +8,13 @@ needs_update <- function(src, dest) {
   mtime[2] < mtime[1]
 }
 
-render_chapter <- function(src, bib, csl) {
+render_chapter <- function(src, bib) {
   dest <- file.path("book/tex/", gsub("\\.rmd", "\\.tex", src))
   if (!needs_update(src, dest)) return()
 
   message("Rendering ", src)
   command <- bquote(rmarkdown::render(.(src),
-                                      bookdown2::tex_chapter(bib = .(bib), csl = .(csl)),
+                                      bookdown2::tex_chapter(bib = .(bib)),
                                       output_dir = "book/tex",
                                       quiet = TRUE, env = globalenv()))
   writeLines(deparse(command), "run.r")
@@ -35,9 +35,9 @@ source_clean <- function(path) {
 }
 
 bib <- normalizePath(dir(".", pattern = "\\.bib$", full.names = TRUE))
-csl <- normalizePath(dir(".", pattern = "\\.csl$", full.names = TRUE))
+# csl <- normalizePath(dir(".", pattern = "\\.csl$", full.names = TRUE))
 chapters <- dir(".", pattern = "\\.rmd$")
-lapply(chapters, render_chapter, bib, csl)
+lapply(chapters, render_chapter, bib)
 
 # Copy across additional files -----------
 file.copy("book/test_book.tex", "book/tex/", recursive = TRUE)

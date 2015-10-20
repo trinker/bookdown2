@@ -11,6 +11,10 @@
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 \setmonofont[Mapping=tex-ansi]{Inconsolata}
 
+% don't want numbering
+\setsecnumformat{}
+\maxsecnumdepth{none}
+
 % Taken from pandoc x.md -o test.tex --standalone
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -102,6 +106,7 @@
 
 %% edit the below list by hand to get the chapters in order
 
+\include{test_intro}
 \include{test_chapter_one}
 \include{test_chapter_two}
 

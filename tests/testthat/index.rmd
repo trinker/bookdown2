@@ -1,0 +1,16 @@
+---
+layout: default
+title: Welcome
+output: bookdown2::html_chapter
+---
+
+# Your book
+
+This is the book site for __"Your book"__. 
+
+
+
+<ul class="toc">
+  {% include package-nav.html %}
+</ul>
+

@@ -1,15 +1,15 @@
 #' @export
-html_chapter <- function(toc = NULL, bib="references.bib", csl="apa.csl") {
+html_chapter <- function(raw = FALSE, toc = NULL, bib="references.bib") {
   library(bookdown2)
 
   base <- rmarkdown::html_document(
     self_contained = FALSE,
     lib_dir = "www",
-    template =  system.file("chapter-html.html", package = "bookdown"),
+    template = if (raw) system.file("raw-html.html", package = "bookdown2") else system.file("chapter-html.html", package = "bookdown2"),,
     mathjax =  "default",
     pandoc_args = c("--chapters",
                     "--bibliography", bib,
-                    "--csl", csl,
+                    #"--csl", csl,
                     "")
   )
   # Remove --section-divs option
@@ -42,7 +42,7 @@ pdf_chapter <- function(toc = FALSE, book = FALSE) {
 }
 
 #' @export
-tex_chapter <- function(toc = FALSE, book = FALSE, bib, csl) {
+tex_chapter <- function(toc = FALSE, book = FALSE, bib) {
   library(bookdown2)
   options(digits = 3)
   set.seed(1014)
@@ -52,7 +52,7 @@ tex_chapter <- function(toc = FALSE, book = FALSE, bib, csl) {
     latex_engine = "xelatex",
     pandoc_args = c("--chapters",
                     "--bibliography", bib,
-                    "--csl", csl,
+                    #"--csl", csl,
                     "")
   )
   base$pandoc$from <- markdown_style

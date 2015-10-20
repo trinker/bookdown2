@@ -1,0 +1,5 @@
+name: my book
+markdown: redcarpet
+highlighter: pygments
+
+exclude: ["CONTRIBUTING.md", "contribute.rmd", "README.md", "book"]
