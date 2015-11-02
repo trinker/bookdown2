@@ -21,7 +21,9 @@ This is a chapter of the book for testing. It has code to be executed, and citat
 We are testing to see if a bib file and a csl can be used with the bookdown package to produce chapters that have a reference list at the end.
 
 ```{r simple_plot}
-plot(rnorm(1000))
+x <-rnorm(1000)
+head(x)
+plot(x)
 ```
 
 `r ref$fig(name = "random_data", caption = "Plot of 100 values randomly sampled from a normal distribution.")`
