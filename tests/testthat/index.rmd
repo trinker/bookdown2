@@ -6,7 +6,7 @@ output: bookdown2::html_chapter
 
 # Your book
 
-This is the book site for __"Your book"__. 
+This is the book site for __"Your book"__. To edit the table of contents that you see below, see the `package-nav.html` file in the `_includes` directory. 
 
 
 

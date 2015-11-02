@@ -1,5 +1,5 @@
 Package: bookdown2
-Title: Formats books from Rmarkdown documents
+Title: Formats books and websites from Rmarkdown documents
 Version: 0.1
 Authors@R: as.person(c('Hadley Wickham <h.wickham@gmail.com> [aut,cre]',
                        'Ben Marwick <benmarwick@gmail.com> [ctb]'))

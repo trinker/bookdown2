@@ -5,7 +5,7 @@ output: bookdown2::html_chapter
 ---
 
 ```{r, caption_numering, echo = FALSE}
-chapter_number <- 2
+chapter_number <- 0
 ref <- list(
   fig = pryr::partial(captioner::captioner, prefix = paste0("Figure ", chapter_number, "."), auto_space = FALSE)(),
   tbl = pryr::partial(captioner::captioner, prefix = paste0("Table ", chapter_number, "."), auto_space = FALSE)()
@@ -16,15 +16,15 @@ ref <- list(
 
 This is the introduction to the book.
 
-## Building the PDF
+## Building the PDF {#buildingpdf}
 
 To build the PDF of this book, look in the `book` directory and run the `build-book.r` script. You'll need pandoc, pandoc-citeproc, xelatex, the inconsolata font and the bookdown2 package.
 
-## Building the website
+## Building the website {#buildingsite}
 
 To build the HTML pages for this book, open a terminal in the directory that contains this file, and run `sudo jekyll build` and then look in the `_site` directory for the files (which can then be put online), or run `sudo jekyll serve --watch` to see how the HTML looks when provided by a webserver at http://localhost:4000 This is useful for iterative work, when you want to make small changes and see how they look right away. 
 
-## Adding a new chapter
+## Adding a new chapter {#addingchapter}
 
 When a new chapter is added, the `includes/package-nav.html` file needs to be manually updated, and run `index()` in this dirctory to remake the toc files. And manually update the `book/test_book.tex` to add the new chapter to make sure it's included in the PDF. 
 
@@ -38,7 +38,23 @@ output: bookdown2::html_chapter
 ---
 ```
 
-## References 
+Followed by this chunk that takes care of figure captions and cross-references. This gives table and figures numbers like 2.3, for chapter two, figure three.
 
+<pre>
+&#96;&#96;&#96;{r, caption_numering, echo = FALSE}
+chapter_number <- 0 # edit this to match the actual chapter number
+ref <- list(
+  fig = pryr::partial(captioner::captioner, 
+  prefix = paste0("Figure ", chapter_number, "."), auto_space = FALSE)(),
+  tbl = pryr::partial(captioner::captioner, p
+  refix = paste0("Table ", chapter_number, "."), auto_space = FALSE)()
+    )
+&#96;&#96;&#96;
+</pre>
 
+See the rmarkdown source file for how to use the caption and cross-referencing. 
+
+## References {#references}
+
+If there were any citations in this document, the references would appear here. 
 

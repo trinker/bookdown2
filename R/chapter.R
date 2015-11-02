@@ -1,5 +1,5 @@
 #' @export
-html_chapter <- function(raw = FALSE, toc = NULL, bib="references.bib") {
+html_chapter <- function(raw = FALSE, toc = NULL, bib = "references.bib") {
   library(bookdown2)
 
   base <- rmarkdown::html_document(

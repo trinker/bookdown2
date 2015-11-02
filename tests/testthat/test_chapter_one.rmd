@@ -28,5 +28,5 @@ plot(rnorm(1000))
 
 Some of the best recent books on R include Hadley Wickham's 'Advanced R' [-@wickham2014advanced]. He also has a very useful book on R packages [@wickham2015packages].
 
-## References 
+## References {#ch1references}
 
